@@ -1,8 +1,9 @@
+require('dotenv').config()
 const pg = require('pg')
 const config = {
-  user: 'yichuanwang',
-  host: 'localhost',
-  database: 'yichuanwang'
+  user: process.env.PSQL_USER,
+  host: process.env["PSQL_HOST "],
+  database: process.env.PSQL_DB
 };
 const values = [process.argv[2] || 'JUL02']
 const client = new pg.Client(config)
